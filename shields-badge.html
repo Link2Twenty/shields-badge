@@ -51,23 +51,23 @@
         let rightColor = this._getStyle('right');
         
         if (leftColor) {
-          leftColor.replace(/ /g,'')
-          leftColor.replace(/#/g,'')
-          baseUrl += `&colorA=${leftColor}`
+          leftColor.replace(/ /g,'');
+          leftColor.replace(/#/g,'');
+          baseUrl += `&colorA=${leftColor}`;
         }
 
         if (rightColor) {
-          rightColor.replace(/ /g,'')
-          rightColor.replace(/#/g,'')
-          baseUrl += `&colorB=${rightColor}`
+          rightColor.replace(/ /g,'');
+          rightColor.replace(/#/g,'');
+          baseUrl += `&colorB=${rightColor}`;
         }
 
         if (style) {
-          baseUrl += `&style=${style}`
+          baseUrl += `&style=${style}`;
         }
 
         if (redirect) {
-          baseUrl += `&link=${redirect}`
+          baseUrl += `&link=${redirect}`;
         }
 
         return baseUrl;
