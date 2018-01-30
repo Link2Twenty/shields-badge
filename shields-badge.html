@@ -51,14 +51,12 @@
         let rightColor = this._getStyle('right');
         
         if (leftColor) {
-          leftColor.replace(/ /g,'');
-          leftColor.replace(/#/g,'');
+          leftColor = leftColor.replace(/ /g,'').replace(/#/g,'');
           baseUrl += `&colorA=${leftColor}`;
         }
 
         if (rightColor) {
-          rightColor.replace(/ /g,'');
-          rightColor.replace(/#/g,'');
+          rightColor = rightColor.replace(/ /g,'').replace(/#/g,'');
           baseUrl += `&colorB=${rightColor}`;
         }
 
