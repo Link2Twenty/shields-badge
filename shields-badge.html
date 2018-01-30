@@ -47,23 +47,19 @@
 
       _computeFullLink(left, right, style, redirect) {
         var baseUrl = `https://img.shields.io/badge/${left}-${right}-green.svg?`
-
-        if (this._getStyle('left')) {
-          if (this._getStyle('left').indexOf("#") == 0) {
-            baseUrl += "&colorA=" + this._getStyle('left').substr(1)
-          }
-          else {
-            baseUrl += `&colorA=${this._getStyle('left')}`
-          }
+        let leftColor = this._getStyle('left');
+        let rightColor = this._getStyle('right');
+        
+        if (leftColor) {
+          leftColor.replace(/ /g,'')
+          leftColor.replace(/#/g,'')
+          baseUrl += `&colorA=${leftColor}`
         }
 
-        if (this._getStyle('right')) {
-          if (this._getStyle('right').indexOf("#") == 0) {
-            baseUrl += "&colorB=" + this._getStyle('right').substr(1)
-          }
-          else {
-            baseUrl += `&colorB=${this._getStyle('right')}`
-          }
+        if (rightColor) {
+          rightColor.replace(/ /g,'')
+          rightColor.replace(/#/g,'')
+          baseUrl += `&colorB=${rightColor}`
         }
 
         if (style) {
